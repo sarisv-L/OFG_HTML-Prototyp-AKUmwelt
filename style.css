@@ -1,3 +1,7 @@
+@charset "UTF-8";
+
+/* ***************RESET***************** */
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -8,6 +12,7 @@
 /* 2. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -65,4 +70,107 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* ***************STYLES***************** */
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 140px;
+}
+
+.heroImage {
+  background-image: url('https://picsum.photos/1440');
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+}
+
+.column {
+  float: left;
+  background: #ddd;
+  margin: 25px 0 25px 5%;
+  /* text-align: center; */
+}
+
+.column:first-child {
+  margin-left: 0;
+}
+
+/* Clearfix */
+.row:before,
+.row:after {
+  content: ' ';
+  display: table;
+}
+
+.row::after {
+  clear: both;
+}
+
+/* NAVIGATION */
+
+#navigation {
+  float: right;
+}
+
+#navigation li {
+  display: inline;
+  list-style: none;
+  margin-left: 35px;
+}
+
+#navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 15px;
+}
+
+#navigation a:hover {
+  color: #fff;
+}
+
+/* Raster */
+
+.col_1 {
+  width: 100%;
+}
+
+.col_1_2 {
+  width: 47.5%;
+}
+
+.col_1_3 {
+  width: 30%;
+}
+
+.col_2_3 {
+  width: 65%;
+}
+
+.col_1_4 {
+  width: 21.25%;
+}
+
+.col_3_4 {
+  width: 73.75%;
+}
+
+/***** Media Queries ******/
+
+@media only screen and (max-width: 950px) {
+  .col_1,
+  .col_1_2,
+  .col_1_3,
+  .col_2_3,
+  .col_1_4,
+  .col_3_4,
+  .col_1_2 {
+    width: 100%;
+  }
+  .column {
+    margin-left: 0;
+  }
 }

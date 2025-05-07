@@ -234,6 +234,11 @@ h6 {
   white-space: nowrap;
 }
 
+/* Aktionen & Veranstaltungen */
+.aktionen {
+  display: flex;
+}
+
 /* Clearfix */
 .row:before,
 .row:after {
@@ -283,14 +288,19 @@ h6 {
   .col_1_2 {
     width: 100%;
   }
+  img {
+    width: 100%;
+    height: auto;
+  }
   .column {
     margin-left: 0;
   }
+
   .project-title {
     width: 90%;
   }
   .grid-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-template-areas:
       'first'
       'second'
@@ -299,5 +309,6 @@ h6 {
       'fifth'
       'sixth';
     grid-template-rows: repeat(6, minmax(150px, 1fr));
+    justify-content: center;
   }
 }

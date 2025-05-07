@@ -15,11 +15,13 @@
   padding: 0;
 }
 
-body {
+body,
+html {
   /* 4. Add accessible line-height */
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
 }
 
 /* 6. Improve media defaults */
@@ -78,6 +80,7 @@ h6 {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 140px;
+  overflow: hidden;
 }
 
 .heroImage {
@@ -96,17 +99,6 @@ h6 {
 
 .column:first-child {
   margin-left: 0;
-}
-
-/* Clearfix */
-.row:before,
-.row:after {
-  content: ' ';
-  display: table;
-}
-
-.row::after {
-  clear: both;
 }
 
 /* NAVIGATION */
@@ -130,6 +122,127 @@ h6 {
 
 #navigation a:hover {
   color: #fff;
+}
+
+/* UNSERE PROJEKTE */
+.projekte {
+  margin: 80px 0;
+}
+
+.pro-box {
+  position: relative;
+}
+
+.projekt-title {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background: rgba(98, 98, 98, 0.7);
+  color: #fff;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.projekte img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Werde Mitglied */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  grid-template-areas:
+    'first second third'
+    '. fourth fifth'
+    '. sixth  . ';
+  width: 80%;
+  margin: 0 auto;
+}
+.item-1 {
+  grid-area: first;
+}
+.item-2 {
+  grid-area: second;
+  padding: 0;
+}
+.item-2 .img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.item-3 {
+  grid-area: third;
+}
+.item-4 {
+  grid-area: fourth;
+}
+.item-5 {
+  grid-area: fifth;
+}
+.item-6 {
+  grid-area: sixth;
+}
+
+.grid-item {
+  background-color: #ddd;
+  text-align: center;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-item p {
+  padding: 10px;
+}
+
+.email-form {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+.item-6 {
+  background: none;
+}
+
+.email-form input[type='email'] {
+  flex: 1 1 150px; /* grow + shrink + base width */
+  padding: 10px;
+  font-size: 0.8em;
+  min-width: 0; /* 🛠 Prevents overflow on very small screens */
+  box-sizing: border-box;
+}
+
+.email-form button {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Clearfix */
+.row:before,
+.row:after {
+  content: ' ';
+  display: table;
+}
+
+.row::after {
+  clear: both;
 }
 
 /* Raster */
@@ -172,5 +285,19 @@ h6 {
   }
   .column {
     margin-left: 0;
+  }
+  .project-title {
+    width: 90%;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'first'
+      'second'
+      'third'
+      'fourth'
+      'fifth'
+      'sixth';
+    grid-template-rows: repeat(6, minmax(150px, 1fr));
   }
 }

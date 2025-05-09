@@ -235,9 +235,6 @@ h6 {
 }
 
 /* Aktionen & Veranstaltungen */
-.aktionen {
-  display: flex;
-}
 
 /* Clearfix */
 .row:before,
@@ -295,6 +292,9 @@ h6 {
   .column {
     margin-left: 0;
   }
+  .wrapper {
+    padding: 0 20px;
+  }
 
   .project-title {
     width: 90%;
@@ -310,5 +310,8 @@ h6 {
       'sixth';
     grid-template-rows: repeat(6, minmax(150px, 1fr));
     justify-content: center;
+  }
+  section {
+    min-width: 250px;
   }
 }
